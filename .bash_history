@@ -29,3 +29,5 @@ exit
 make
 exiit
 exit
+make
+exit
