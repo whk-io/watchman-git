@@ -42,6 +42,6 @@ build: ## Build watchman-git container
 debug: ## Run container for debugging.
 	docker run -it -v $(shell pwd):/root -v ssh:/root/.ssh/ --entrypoint /bin/bash watchman-git:latest
 
-run: ## Run container and start a watch and trigger at startup
+run: ## Run container and start a watch and trigger.
 	docker run -it -v $(shell pwd):/root watchman-git:latest
 	
