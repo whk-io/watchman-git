@@ -39,6 +39,8 @@ monitor-log: ## Stream active log
 build: ## Build watchman-git container
 	docker build -t watchman-git:latest .
 
-run:
-	docker run -it -v $(shell pwd):/root -v ssh:/root/.ssh/ watchman-git:latest
-	
+run: ## Run container for debugging.
+	docker run -it -v $(shell pwd):/root -v ssh:/root/.ssh/ --entrypoint /bin/bash watchman-git:latest
+
+autorun: ## Run container and start a watch and trigger at startup
+	docker run -it -v $(shell pwd):/root -v watchman-list:latest
