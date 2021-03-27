@@ -12,4 +12,7 @@ Makefile and trigger script for easily setting up auto commits on changes with w
 
 TIP: Requires Make, Watchman, Git
 
-Type `make` to view the available options
+`make` to view the available options
+<hr>
+`make list` : List watchman watched folders
+`make list-triggers` : list triggers for current folder
