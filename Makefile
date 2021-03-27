@@ -1,10 +1,10 @@
 WORKDIR := $(shell pwd)
 
-.PHONY: help list list-triggers watch trigger view-state view-log monitor-log
+.PHONY: help list list-triggers watch watch-stop trigger view-state view-log monitor-log
 
 help:
 	clear
-	@printf "*** Makefile options: ***\n"
+	@printf "Makefile options:\n"
 	@printf "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)\n"
 
 list: ## List watchman watched folders
@@ -15,6 +15,9 @@ list-triggers: ## List triggers for current folder
 
 watch: ## Start watching current folder
 	watchman watch $(WORKDIR)
+
+watch-stop: ## Stops watching the current folder
+	watchman watch-del $(WORKDIR)
 
 trigger: ## Create trigger for current folder
 	watchman -- trigger $(WORKDIR) trigger_name *.test -- $(WORKDIR)/trigger.sh
