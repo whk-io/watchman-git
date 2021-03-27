@@ -1,4 +1,5 @@
 #!/bin/bash
-cat &&
-make start
+make watch
 make trigger
+cat
+#export USER=root && make monitor-log
