@@ -36,3 +36,5 @@ view-log: ## View watchman log
 monitor-log: ## Stream active log
 	tail -f /usr/local/var/run/watchman/$(USER)-state/log
 
+build: ## Build watchman-git container
+	docker build -t watchman-git:latest .

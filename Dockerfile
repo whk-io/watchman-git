@@ -1,0 +1,3 @@
+FROM ubuntu:20.04
+RUN apt-get update -y
+RUN apt-get install -y watchman git make
