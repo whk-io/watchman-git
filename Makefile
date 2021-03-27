@@ -1,3 +1,8 @@
+# watchman-git Makefile
+# created by Hunter Kirk
+# version v1.0.1
+# https://github.com/whk-io/watchman-git
+
 WORKDIR := $(shell pwd)
 
 .PHONY: help list list-triggers watch watch-stop trigger view-state view-log monitor-log
