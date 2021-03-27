@@ -1,4 +1,4 @@
 FROM ubuntu:groovy
 RUN apt-get update -y
-RUN apt-get install -y watchman git make bsdmainutils
+RUN apt-get install -y watchman git make bsdmainutils ssh-client
 WORKDIR /root

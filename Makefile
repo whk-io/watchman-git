@@ -40,4 +40,5 @@ build: ## Build watchman-git container
 	docker build -t watchman-git:latest .
 
 run:
-	docker run -it -v $(shell pwd):/root watchman-git:latest
+	docker run -it -v $(shell pwd):/root -v ssh:/root/.ssh/ watchman-git:latest
+	

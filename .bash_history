@@ -36,3 +36,9 @@ make
 exit
 make
 exit
+make
+exit
+make
+exit
+make
+exit
