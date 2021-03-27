@@ -38,3 +38,6 @@ monitor-log: ## Stream active log
 
 build: ## Build watchman-git container
 	docker build -t watchman-git:latest .
+
+run:
+	docker run -it -v $(shell pwd):/root watchman-git:latest
