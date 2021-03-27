@@ -10,7 +10,7 @@ WORKDIR := $(shell pwd)
 help:
 	clear
 	@printf "Makefile options:\n"
-	@printf "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\\1\\:\2/' | column -c2 -t -s :)\n"
+	@printf "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\1\:\2/' | column -c2 -t -s :)\n"
 
 list: ## List watchman watched folders
 	watchman watch-list

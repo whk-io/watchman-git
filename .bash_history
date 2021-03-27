@@ -34,3 +34,5 @@ exit
 make
 make
 exit
+make
+exit
