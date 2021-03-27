@@ -20,7 +20,7 @@ watch-stop: ## Stops watching the current folder
 	watchman watch-del $(WORKDIR)
 
 trigger: ## Create trigger for current folder
-	watchman -- trigger $(WORKDIR) trigger_name *.test -- $(WORKDIR)/trigger.sh
+	watchman -- trigger $(WORKDIR) trigger_name * -- $(WORKDIR)/trigger.sh
 
 view-state: ## View watchman state
 	cat /usr/local/var/run/watchman/$(USER)-state/state

@@ -1,0 +1,15 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+# Watchman-Git 
+
+Makefile and trigger script for easily setting up auto commits on changes with watchman.
+
+TIP: Requires Make, Watchman, Git
+
+Type `make` to view the available options
