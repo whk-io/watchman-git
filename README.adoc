@@ -8,7 +8,7 @@ endif::[]
 
 # Watchman-Git 
 
-Makefile and trigger script for rapidly setting up auto commits on changes with watchman.
+Makefile and trigger script for rapidly setting up auto git commits on changes with watchman.
 
 TIP: Requires Make, Watchman, Git
 
