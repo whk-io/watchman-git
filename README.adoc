@@ -10,7 +10,7 @@ endif::[]
 
 Makefile and trigger script for rapidly setting up auto git commits on changes with watchman.
 
-TIP: Requires Make, Watchman, Git
+TIP: Requires Make, Watchman, Git, and Docker if you want to build the container.
 
 * `make` to view the available options
 * `make list` : List watchman watched folders
