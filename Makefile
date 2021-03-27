@@ -1,6 +1,6 @@
 # watchman-git Makefile
 # created by Hunter Kirk
-# version v1.0.1
+# version v1.0.2
 # https://github.com/whk-io/watchman-git
 
 WORKDIR := $(shell pwd)
