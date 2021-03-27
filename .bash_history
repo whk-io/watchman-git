@@ -26,3 +26,6 @@ ls
 make
 cat Makefile 
 exit
+make
+exiit
+exit
