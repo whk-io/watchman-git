@@ -43,5 +43,5 @@ debug: ## Run container for debugging.
 	docker run -it -v $(shell pwd):/root -v ssh:/root/.ssh/ --entrypoint /bin/bash watchman-git:latest
 
 autorun: ## Run container and start a watch and trigger at startup
-	docker run -it -v $(shell pwd):/root watchman-list:latest
+	docker run -it -v $(shell pwd):/root watchman-git:latest
 	
