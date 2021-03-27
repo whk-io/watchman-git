@@ -15,9 +15,12 @@ TIP: Requires Make, Watchman, Git
 * `make` to view the available options
 * `make list` : List watchman watched folders
 * `make list-triggers` : list triggers for current folder
-* `make watch` : Start watching the current folder
-* `make watch-stop` : Stops watching the current folder
+* `make start` : Start watching the current folder
+* `make stop` : Stops watching the current folder
 * `make trigger` : Create trigger for current folder
-* `make view-state` : View watchman state
-* `make view-log` : View watchman log
-* `make monitor-log` : Stream active log
+* `make state` : View watchman state
+* `make log` : View watchman log
+* `make monitor` : Stream active log
+* `make build` : Build watchman-git container
+* `make debug` : Run container for debugging
+* `make run` : Run container and start a watch and trigger.
