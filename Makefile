@@ -1,11 +1,11 @@
 # watchman-git Makefile
 # created by Hunter Kirk
-# version v1.0.2
+# version v1.1.1
 # https://github.com/whk-io/watchman-git
 
 WORKDIR := $(shell pwd)
 
-.PHONY: help list list-triggers watch stop trigger view-state view-log monitor-log debug
+.PHONY: help list list-triggers start stop trigger state log monitor build debug run
 
 help:
 	clear
@@ -18,7 +18,7 @@ list: ## List watchman watched folders
 list-triggers: ## List triggers for current folder
 	watchman trigger-list $(WORKDIR)
 
-watch: ## Start watching current folder
+start: ## Start watching current folder
 	watchman watch $(WORKDIR)
 
 stop: ## Stops watching the current folder
@@ -27,13 +27,13 @@ stop: ## Stops watching the current folder
 trigger: ## Create trigger for current folder
 	watchman -- trigger $(WORKDIR) trigger_name * -- $(WORKDIR)/trigger.sh
 
-view-state: ## View watchman state
+state: ## View watchman state
 	cat /usr/local/var/run/watchman/$(USER)-state/state
 
-view-log: ## View watchman log
+log: ## View watchman log
 	cat /usr/local/var/run/watchman/$(USER)-state/log
 
-monitor-log: ## Stream active log
+monitor: ## Stream active log
 	tail -f /usr/local/var/run/watchman/$(USER)-state/log
 
 build: ## Build watchman-git container
@@ -42,6 +42,6 @@ build: ## Build watchman-git container
 debug: ## Run container for debugging.
 	docker run -it -v $(shell pwd):/root -v ssh:/root/.ssh/ --entrypoint /bin/bash watchman-git:latest
 
-autorun: ## Run container and start a watch and trigger at startup
+run: ## Run container and start a watch and trigger.
 	docker run -it -v $(shell pwd):/root watchman-git:latest
 	
