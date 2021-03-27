@@ -5,7 +5,7 @@
 
 WORKDIR := $(shell pwd)
 
-.PHONY: help list list-triggers watch watch-stop trigger view-state view-log monitor-log
+.PHONY: help list list-triggers watch stop trigger view-state view-log monitor-log
 
 help:
 	clear
@@ -21,7 +21,7 @@ list-triggers: ## List triggers for current folder
 watch: ## Start watching current folder
 	watchman watch $(WORKDIR)
 
-watch-stop: ## Stops watching the current folder
+stop: ## Stops watching the current folder
 	watchman watch-del $(WORKDIR)
 
 trigger: ## Create trigger for current folder
