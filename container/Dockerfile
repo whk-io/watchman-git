@@ -1,7 +1,9 @@
-FROM ubuntu:groovy
+FROM ubuntu:groovy-minimal
+ENV EMAIL=watchman-git@container
+ENV GIT_AUTHOR_NAME=watchman-git@container
 RUN apt-get update -y
-RUN apt-get install -y watchman git make bsdmainutils ssh-client busybox
-COPY .bashrc /root/.bashrc
-COPY git-config /root/.gitconfig
+RUN apt-get install -y watchman git ssh-client
 WORKDIR /root
+COPY bashrc /root/.bashrc
 ENTRYPOINT ["./autorun.sh"]
+
